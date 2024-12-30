@@ -1,11 +1,10 @@
-# Portafolio Personal
+# Personal Portfolio
 
-Bienvenido a mi portafolio personal. Este es un proyecto diseñado para presentarme como programador front-end, mostrar mis habilidades, proyectos destacados y proporcionar un medio para que otros se pongan en contacto conmigo.
+Welcome to my personal portfolio. This is a project designed to introduce myself as a front-end programmer, showcase my skills, featured projects, and provide a means for others to get in touch with me.
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Technologies Used
 
-- **HTML**: Para la estructura del contenido.
-- **CSS**: Para el diseño visual y la estética.
-- **JavaScript**: Para la interactividad y funcionalidad dinámica.
-- **Base de Datos**: Para almacenar y gestionar datos relacionados con mis proyectos, contacto, y más.
-
+- **HTML**: For the structure of the content.
+- **CSS**: For visual design and aesthetics.
+- **JavaScript**: For interactivity and dynamic functionality.
+- **Data Base**: To store and manage data related to my projects, contact, and more.
