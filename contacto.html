@@ -5,15 +5,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel Hernandez</title>
-  <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="foto_sin_fondo">
-  <link rel="preload" href="contacto.css" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="image/png">
+  <link rel="preload" href="index.css" as="style" />
   <link href="contacto.css" rel="stylesheet" />
+  <style>
+      body {
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #fff;
+          color: #333;
+      }
+
+      /* Menú de selección de idioma */
+      .language-selector {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: linear-gradient(135deg, rgb(240, 240, 0), #d90089);
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+
+      .language-selector a {
+          text-decoration: none;
+          color: #ffffff;
+          padding: 5px;
+      }
+
+      /* Estilo adicional */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+          font-family: 'Roboto', sans-serif;
+      }
+
+      p,
+      ul,
+      li {
+          font-family: 'Roboto', sans-serif;
+      }
+  </style>
 </head>
 
-
 <body>
+
   <header>
-    <h1 class="titulo">Daniel Hernando Hernandez Alarcon <span>Software Engineering Student | Web Developer | Cybersecurity</span></h1>
+      <!-- Selector de idioma en la parte superior derecha -->
+      <div class="language-selector">
+          <a href="contacto.html">English</a> | <a href="contactoES.html">Español</a>
+      </div>
+      <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
+      <h1 class="titulo">
+          Daniel Hernando Hernandez Alarcon
+          <span>Front End Developer | Cybersecurity | Software Engineering Student</span>
+      </h1>
   </header>
 
   <nav>
@@ -25,37 +77,41 @@
 
   <section>
     <h2>Contact me</h2>
+    <form action="https://formsubmit.co/danny894@outlook.com" method="POST" />
     <form>
       <fieldset>
         <legend>Contact me by filling out the fields</legend>
 
         <div>
           <label>Name</label>
-          <input type="text" placeholder="Name" />
-        </div>
-
-        <div>
-          <laber>Phone</laber>
-          <input type="number" placeholder="123456789" />
+          <input type="text" name="name" placeholder="Name" />
         </div>
 
         <diav>
           <label>Email</label>
-          <input type="email" placeholder="Email" />
+          <input type="email" name="email" placeholder="Email"/>
+        </diav>
+
+        <diav>
+          <label>Phone</label>
+          <input type="number" name="number" placeholder="123456789"/>
         </diav>
 
         <div>
           <label>Message</label>
-          <textarea></textarea>
+          <textarea name="comments "></textarea>
         </div>
 
         <div>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send"/>
         </div>
+
+        <input type="hidden" name="_next" value="https://danny894.github.io/">
+        <input type="hidden" name="_captcha" value="false">
       </fieldset>
     </form>
+    
 
-    <!-- Aqui creas los links -->
     <p>You can find me on my social networks:</p>
     <section class="contact">
       <ul>
