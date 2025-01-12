@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel Hernandez</title>
-  <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="Logo">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="image/png">
   <link rel="preload" href="index.css" as="style" />
   <link href="index.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Menú de selección de idioma */
+    .language-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: linear-gradient(135deg, rgb(240, 240, 0), #d90089);
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .language-selector a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 5px;
+    }
+
+    /* Estilo adicional */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    p,
+    ul,
+    li {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
 
   <header>
+    <!-- Selector de idioma en la parte superior derecha -->
+    <div class="language-selector">
+      <a href="index.html">English</a> | <a href="indexES.html">Español</a>
+    </div>
+    <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
     <h1 class="titulo">
       Daniel Hernando Hernandez Alarcon
-      <span>Software Engineering Student | Web Developer | Cybersecurity</span>
+      <span>Front End Developer | Cybersecurity | Software Engineering Student</span>
     </h1>
   </header>
 
@@ -30,13 +79,12 @@
   <main>
     <section id="sobre-mi">
       <h2>About me</h2>
-      <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
       <p>
-        I am a Software Engineering student with a focus on web development and cybersecurity. I am passionate about
-        creating interactive and secure web applications, using modern technologies such as JavaScript, React, Node.js,
-        Angular, HTML, CSS, and TypeScript. In addition, I have fundamental knowledge in cybersecurity, which allows me
-        to implement protective measures in my software projects. I am looking for my first job opportunity to continue
-        developing my skills and contribute my knowledge in web development and cybersecurity to innovative projects.
+        Front-End Developer with experience in designing and developing web applications using modern technologies such
+        as React, JavaScript, TypeScript, CSS, HTML, Node.js, PHP, and SQL. Passionate about creating intuitive,
+        streamlined, and functional user interfaces, with a focus on writing clean code and efficient solutions.
+        Additionally, I have fundamental knowledge in cybersecurity, which allows me to implement protective measures in
+        my software projects.
       </p>
     </section>
 
@@ -65,10 +113,10 @@
     </section>
 
     <section id="proyectos">
-      <h2>Personal Projects</h2>
+      <h2>Personal projects</h2>
       <ul>
         <li>
-          <a href="https://cheery-trifle-84d3c2.netlify.app" target="_blank">Dani Store</a> - Dani Store is a web
+          <a href="https://github.com/Danny894/danistore.github.io" target="_blank">Dani Store</a> - Dani Store is a web
           store dedicated to selling custom sweaters with logos of different programming languages. This store is
           designed using HTML and CSS, offering a simple and visually appealing experience for programming enthusiasts
           who want to showcase their favorite language everywhere.
