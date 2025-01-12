@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, black, #010a55);
+    background: linear-gradient(135deg, rgb(240, 240, 0), #d90089);
     color: #000000;
     line-height: 1.6;
 }
@@ -14,11 +14,23 @@ h1, h2, h3 {
 
 /* Encabezado */
 header {
-    text-align: center;
-    background: linear-gradient(135deg, #000000, #010a55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #000000, rgb(0, 0, 0));
     color: white;
     padding: 40px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-right: 40px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 header .titulo {
@@ -32,6 +44,17 @@ header .titulo span {
     font-size: 1.3rem;
     font-weight: lighter;
     margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Navegación */
@@ -59,15 +82,22 @@ nav li {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease-in-out; /* Transición general */
 }
 
 nav a:hover {
-    color: #ffd700;
+    color: #d90089; /* Efecto hover */
+    transform: scale(1.1); /* Agrandar al pasar el mouse */
 }
 
+/* Clase para transición en clic */
+nav a.transition {
+    color: #d90089; /* Color durante la transición */
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+/* Contenedor principal */
 main {
     max-width: 1200px;
     margin: 40px auto;
@@ -201,5 +231,4 @@ footer {
         padding: 10px 15px;
     }
 }
-
 
