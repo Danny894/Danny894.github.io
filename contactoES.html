@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Hernandez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="image/png">
+    <link rel="preload" href="index.css" as="style" />
+    <link href="contacto.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Menú de selección de idioma */
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: linear-gradient(135deg, rgb(240, 240, 0), #d90089);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .language-selector a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 5px;
+        }
+
+        /* Estilo adicional */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        p,
+        ul,
+        li {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Selector de idioma en la parte superior derecha -->
+        <div class="language-selector">
+            <a href="contacto.html">English</a> | <a href="contactoES.html">Español</a>
+        </div>
+        <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
+        <h1 class="titulo">
+            Daniel Hernando Hernandez Alarcon
+            <span> Desarrollador Front End | Ciberseguridad |Estudiante de Ingeniería de Software </span>
+        </h1>
+    </header>
+
+  <nav>
+    <a href="indexES.html">Home</a>
+    <a href="contactoES.html">Contacto</a>
+    <a href="https://github.com/Danny894" target="_blank">github</a>
+
+  </nav>
+
+  <section>
+    <h2>Contactame</h2>
+    <form action="https://formsubmit.co/danny894@outlook.com" method="POST" />
+    <form>
+      <fieldset>
+        <legend>Contáctame rellenando los campos</legend>
+
+        <div>
+          <label>Nombre completo</label>
+          <input type="text" name="name" placeholder="Nombre" />
+        </div>
+
+        <diav>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Email"/>
+        </diav>
+
+        <diav>
+          <label>Numero de celular</label>
+          <input type="number" name="number" placeholder="123456789"/>
+        </diav>
+
+        <div>
+          <label>Mensaje</label>
+          <textarea name="comments "></textarea>
+        </div>
+
+        <div>
+          <input type="submit" value="Enviar"/>
+        </div>
+
+        <input type="hidden" name="_next" value="https://danny894.github.io/">
+        <input type="hidden" name="_captcha" value="false">
+      </fieldset>
+    </form>
+    
+
+    <p>Puedes encontrarme en mis redes sociales:</p>
+    <section class="contact">
+      <ul>
+        <li>
+          Email:
+          <a href="mailto:danny894@outlook.com">danny894@outlook.com</a>
+        </li>
+        <li>
+          GitHub:
+          <a href="https://github.com/Danny894" target="_blank">Danny894</a>
+        </li>
+        <li>
+          Instagram:
+          <a href="https://www.instagram.com/dannydaniel02/" target="_blank">Dannydaniel02</a>
+        </li>
+        <li>
+          linkedin:
+          <a href="https://www.linkedin.com/in/daniel-hernandez-alarcon-466112268/" target="_blank">Daniel Hernandez</a>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <footer>
+    <p>
+        Todos los derechos reservados. Daniel Hernandez
+    </p>
+  </footer>
+</body>
+
+</html>
