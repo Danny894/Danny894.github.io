@@ -78,6 +78,31 @@ nav a:hover {
     color: #ffd700;
 }
 
+@media (max-width: 480px) {
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    header .titulo {
+        font-size: 1.5rem;
+    }
+
+    header .titulo span {
+        font-size: 0.9rem;
+    }
+
+    nav {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        padding: 10px 0;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        margin: 5px 0; /* Margen vertical para apilar enlaces */
+    }
+}
+
 section {
     max-width: 1000px;
     margin: 30px auto;
