@@ -57,7 +57,7 @@ header .titulo span {
     }
 }
 
-/* Navegación */
+/* Estilos generales */
 nav {
     background-color: #000000;
     display: flex;
@@ -72,11 +72,26 @@ nav ul {
     margin: 0;
     display: flex;
     gap: 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Evitar que se envuelva */
+    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
+}
+
+nav ul::-webkit-scrollbar {
+    height: 5px;
+}
+
+nav ul::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
+
+nav ul::-webkit-scrollbar-track {
+    background: #000;
 }
 
 nav li {
     margin: 0;
+    white-space: nowrap; /* Evitar que el texto de los enlaces se corte */
 }
 
 nav a {
@@ -87,7 +102,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #d90089; /* Efecto hover */
+    color: #ffd700; /* Efecto hover */
     transform: scale(1.1); /* Agrandar al pasar el mouse */
 }
 
@@ -97,30 +112,27 @@ nav a.transition {
     transform: scale(1.1); /* Efecto de agrandamiento */
 }
 
-@media (max-width: 480px) {
-    header img {
-        width: 80px;
-        height: 80px;
-    }
-
-    header .titulo {
-        font-size: 1.5rem;
-    }
-
-    header .titulo span {
-        font-size: 0.9rem;
-    }
-
-    nav {
-        flex-direction: column; /* Apilar elementos verticalmente */
-        padding: 10px 0;
+/* Ajustes específicos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px; /* Reducir espacio entre elementos */
     }
 
     nav a {
-        font-size: 0.8rem;
-        margin: 5px 0; /* Margen vertical para apilar enlaces */
+        font-size: 0.9rem; /* Ajustar tamaño del texto */
     }
 }
+
+@media (max-width: 480px) {
+    nav ul {
+        gap: 10px; /* Reducir más el espacio en pantallas pequeñas */
+    }
+
+    nav a {
+        font-size: 0.8rem; /* Reducir aún más el tamaño del texto */
+    }
+}
+
 
 /* Contenedor principal */
 main {
@@ -256,4 +268,5 @@ footer {
         padding: 10px 15px;
     }
 }
+
 
