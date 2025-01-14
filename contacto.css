@@ -57,12 +57,27 @@ header .titulo span {
     }
 }
 
+/* Estilos generales */
 nav {
     background-color: #000000;
     display: flex;
     justify-content: center;
     padding: 15px 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
+}
+
+nav::-webkit-scrollbar {
+    height: 5px;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
+
+nav::-webkit-scrollbar-track {
+    background: #000;
 }
 
 nav a {
@@ -72,13 +87,32 @@ nav a {
     font-size: 1rem;
     margin: 0 20px;
     transition: color 0.3s ease;
+    white-space: nowrap; /* Evitar que los enlaces se rompan en varias líneas */
 }
 
 nav a:hover {
     color: #ffd700;
 }
 
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 0.9rem; /* Reducir tamaño del texto */
+        margin: 0 15px; /* Reducir margen entre enlaces */
+    }
+}
+
 @media (max-width: 480px) {
+    nav {
+        padding: 10px 0;
+        justify-content: flex-start; /* Alinear elementos a la izquierda si es necesario */
+    }
+
+    nav a {
+        font-size: 0.8rem; /* Reducir aún más el tamaño del texto */
+        margin: 0 10px; /* Ajustar márgenes */
+    }
+
     header img {
         width: 80px;
         height: 80px;
@@ -91,17 +125,8 @@ nav a:hover {
     header .titulo span {
         font-size: 0.9rem;
     }
-
-    nav {
-        flex-direction: column; /* Apilar elementos verticalmente */
-        padding: 10px 0;
-    }
-
-    nav a {
-        font-size: 0.8rem;
-        margin: 5px 0; /* Margen vertical para apilar enlaces */
-    }
 }
+
 
 section {
     max-width: 1000px;
