@@ -10,28 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="image/png">
   <style>
-      /* Uso de fuentes del sistema */
-      body {
-    margin: 0;
-    font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(135deg, #c46e05, #b40090);
-  }
 
-  /* Evitar desbordamiento horizontal */
-  * {
+body {
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(135deg, #c46e05, #b40090);
+      }
+  
+/* Evitar desbordamiento horizontal */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
 
-  html,
-  body {
-    overflow-x: hidden;
-    /* Impide scroll lateral */
+html, body {
+    overflow-x: hidden; /* Impide scroll lateral */
     width: 100%;
-  }
+}
 
-  header {
+header {
     background: linear-gradient(135deg, #000000, #000000);
     color: white;
     padding: 2rem 0;
@@ -41,162 +39,476 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow-x: hidden;
-    /* Asegura que header no genere scroll lateral */
-  }
+    overflow-x: hidden; /* Asegura que header no genere scroll lateral */
+}
 
-  .header-content {
+.header-content {
     display: flex;
     align-items: center;
     flex-direction: row;
-    max-width: 100%;
-    /* Asegura que el contenido se ajuste a la pantalla */
+    max-width: 100%; /* Asegura que el contenido se ajuste a la pantalla */
     flex-wrap: wrap;
-  }
+}
 
-  header img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-right: 25px;
+header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-right: 25px;
 
-  /* Animación de entrada */
-  animation: fadeIn 1s ease-in-out;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInZoom 3s ease-out forwards, floatAnimation 4s infinite ease-in-out;
+    /* Animación de entrada */
+    animation: fadeIn 1s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInZoom 3s ease-out forwards, floatAnimation 4s infinite ease-in-out;
 }
 
 /* Animación de entrada */
 @keyframes fadeInZoom {
-  from {
-      opacity: 0;
-      transform: scale(0.8);
-  }
-  to {
-      opacity: 1;
-      transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Efecto flotante */
 @keyframes floatAnimation {
-  0% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-10px);
-  }
-  100% {
-      transform: translateY(0);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
-  header img {
-      margin-bottom: 1rem;
-      animation: fadeInZoom 1s ease-out forwards, floatAnimation 5s infinite ease-in-out;
-  }
+    header img {
+        margin-bottom: 1rem;
+        animation: fadeInZoom 1s ease-out forwards, floatAnimation 5s infinite ease-in-out;
+    }
 }
 
-  header h1 {
+header h1 {
     font-size: 2.5rem;
     margin: 0.5rem 0;
     text-align: left;
-    max-width: 100%;
-    /* Evita que el texto exceda el ancho disponible */
-  }
+    max-width: 100%; /* Evita que el texto exceda el ancho disponible */
+}
 
-  header h1 span {
+header h1 span {
     display: block;
     font-size: 1.2rem;
     font-weight: 400;
     margin-top: 0.5rem;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     header {
-      height: auto;
-      padding: 2rem 1rem;
+        height: auto;
+        padding: 2rem 1rem;
     }
 
     .header-content {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
 
     header img {
-      margin-bottom: 1rem;
+        margin-bottom: 1rem;
     }
 
     header h1 {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
 
     header h1 span {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
-  }
+}
 
 
-  .language-selector {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
-  .language-selector a {
-    text-decoration: none;
-    color: white;
-    padding: 5px;
-    transition: color 0.3s ease;
-  }
-
-  .language-selector a:hover {
-    color: #ffdd57;
-  }
-
-  nav {
+  
+      .language-selector {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+  
+      .language-selector a {
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        transition: color 0.3s ease;
+      }
+  
+      .language-selector a:hover {
+        color: #ffdd57;
+      }
+  
+      nav {
     background: #000000;
     padding: 0.5rem 0;
     text-align: center;
-  }
+}
 
-  nav ul {
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row;
-    /* Organiza los elementos en filas */
-    justify-content: center;
-    /* Centra horizontalmente los elementos */
-    gap: 1rem;
-    /* Espacio entre cada elemento */
-  }
+    flex-direction: row; /* Organiza los elementos en filas */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 1rem; /* Espacio entre cada elemento */
+}
 
-  nav ul li {
+nav ul li {
     margin: 0;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1rem;
     transition: color 0.3s ease;
-  }
+}
 
-  nav ul li a:hover {
+nav ul li a:hover {
     color: #ffdd57;
-  }
+}
 
-/* Estilos Generales */
+  
+      main {
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+  
+      section {
+        margin-bottom: 1.5rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+  
+      section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+  
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+  
+      p,
+      ul {
+        font-size: 1rem;
+        color: #000000;
+      }
+  
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+  
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+  
+      a {
+        color: #2575fc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+  
+      a:hover {
+        color: #6a11cb;
+      }
+  
+      footer {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+      footer p {
+        margin: 0;
+      }
+  
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+  
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      section {
+        animation: fadeIn 0.6s ease-out;
+      }
+  
+      /* Responsive Design */
+      @media (min-width: 600px) {
+        header img {
+          width: 150px;
+          height: 150px;
+        }
+  
+        header h1 {
+          font-size: 2.5rem;
+        }
+  
+        header h1 span {
+          font-size: 1.2rem;
+        }
+  
+        nav ul {
+          flex-direction: row;
+          justify-content: center;
+        }
+  
+        nav ul li {
+          margin: 0 15px;
+        }
+  
+        main {
+          padding: 2rem;
+        }
+  
+        section {
+          padding: 1.5rem;
+        }
+      }
+  
+      @media (min-width: 768px) {
+        header {
+          padding: 2rem 0;
+        }
+  
+        header h1 {
+          font-size: 3rem;
+        }
+  
+        header h1 span {
+          font-size: 1.5rem;
+        }
+  
+        nav ul li a {
+          font-size: 1.1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+        }
+  
+        p,
+        ul {
+          font-size: 1.1rem;
+        }
+      }
+  
+      @media (min-width: 1024px) {
+        header h1 {
+          font-size: 3.5rem;
+        }
+  
+        header h1 span {
+          font-size: 1.75rem;
+        }
+  
+        nav ul li a {
+          font-size: 1.2rem;
+        }
+  
+        h2 {
+          font-size: 2.25rem;
+        }
+  
+        p,
+        ul {
+          font-size: 1.2rem;
+        }
+      }
+      .about {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.about-content p {
+    flex: 1;
+    margin-right: 15px;
+    text-align: justify; /* Justifica el texto del párrafo */
+}
+
+/* Imagen lateral con tamaño adaptable */
+.about-content img {
+    max-width: 200px; /* Tamaño máximo de la imagen */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Apila el contenido verticalmente */
+        align-items: flex-start;
+    }
+
+    .about-content p {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .about-content img {
+        max-width: 150px;
+        align-self: center; /* Centra la imagen en la columna */
+    }
+}
+
+
+
+.about-content img.side-image {
+    max-width: 180px; /* Ancho máximo de la imagen */
+    max-height: 180px; /* Altura máxima de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta el contenido dentro del contenedor */
+    margin-left: 15px; /* Espacio entre la imagen y el texto */
+}
+.technologies .icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.technologies img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+#proyectos {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#proyectos h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#proyectos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#proyectos li {
+    display: flex;
+    flex-wrap: wrap; /* Makes it responsive */
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#proyectos li a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#proyectos li a:hover {
+    text-decoration: underline;
+}
+
+.project-description {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+}
+
+.project-iframe {
+    flex: 1;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.project-description2 {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+}
+
+.project-iframe2 {
+    flex: 1;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-iframe2 iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 section {
     max-width: 1000px;
     margin: 30px auto;
@@ -409,25 +721,27 @@ footer {
 
 <body>
 
-  <header>
-      <!-- Selector de idioma en la parte superior derecha -->
+  <body>
+
+    <header>
       <div class="language-selector">
-          <a href="contacto.html">English</a> | <a href="contactoES.html">Español</a>
+        <a href="contacto.html">English</a> | <a href="contactoES.html">Español</a>
       </div>
       <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
       <h1 class="titulo">
-          Daniel Hernando Hernandez Alarcon
-          <span>Software Developer | Software Engineering Student</span>
+        Daniel Hernando Hernandez Alarcon
+        <span>Software Developer | Software Engineering Student</span>
       </h1>
-  </header>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#contacto.html">Contact</a></li>
-      <li><a href="https://github.com/Danny894" target="_blank">GitHub</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contacto.html">Contact</a></li>
+        <li><a href="https://github.com/Danny894"
+            target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
 
   <section>
     <h2>Contact me</h2>
