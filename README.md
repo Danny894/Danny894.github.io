@@ -6,5 +6,3 @@ Welcome to my personal portfolio. This is a project designed to introduce myself
 
 - **HTML**: For the structure of the content.
 - **CSS**: For visual design and aesthetics.
-- **JavaScript**: For interactivity and dynamic functionality.
-- **Data Base**: To store and manage data related to my projects, contact, and more.
