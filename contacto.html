@@ -5,52 +5,405 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel Hernandez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="image/png">
-  <link rel="preload" href="index.css" as="style" />
-  <link href="contacto.css" rel="stylesheet" />
   <style>
+      /* Uso de fuentes del sistema */
       body {
-          font-family: 'Roboto', sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #fff;
-          color: #333;
-      }
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #c46e05, #b40090);
+  }
 
-      /* Menú de selección de idioma */
-      .language-selector {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          background-color: linear-gradient(135deg, rgb(240, 240, 0), #d90089);
-          padding: 5px 10px;
-          border-radius: 5px;
-          cursor: pointer;
-          font-size: 16px;
-      }
+  /* Evitar desbordamiento horizontal */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-      .language-selector a {
-          text-decoration: none;
-          color: #ffffff;
-          padding: 5px;
-      }
+  html,
+  body {
+    overflow-x: hidden;
+    /* Impide scroll lateral */
+    width: 100%;
+  }
 
-      /* Estilo adicional */
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-          font-family: 'Roboto', sans-serif;
-      }
+  header {
+    background: linear-gradient(135deg, #000000, #000000);
+    color: white;
+    padding: 2rem 0;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    /* Asegura que header no genere scroll lateral */
+  }
 
-      p,
-      ul,
-      li {
-          font-family: 'Roboto', sans-serif;
-      }
+  .header-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 100%;
+    /* Asegura que el contenido se ajuste a la pantalla */
+    flex-wrap: wrap;
+  }
+
+  header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-right: 25px;
+
+  /* Animación de entrada */
+  animation: fadeIn 1s ease-in-out;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInZoom 3s ease-out forwards, floatAnimation 4s infinite ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeInZoom {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Efecto flotante */
+@keyframes floatAnimation {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  header img {
+      margin-bottom: 1rem;
+      animation: fadeInZoom 1s ease-out forwards, floatAnimation 5s infinite ease-in-out;
+  }
+}
+
+  header h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    text-align: left;
+    max-width: 100%;
+    /* Evita que el texto exceda el ancho disponible */
+  }
+
+  header h1 span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      height: auto;
+      padding: 2rem 1rem;
+    }
+
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header img {
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    header h1 span {
+      font-size: 0.9rem;
+    }
+  }
+
+
+  .language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .language-selector a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .language-selector a:hover {
+    color: #ffdd57;
+  }
+
+  nav {
+    background: #000000;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    /* Organiza los elementos en filas */
+    justify-content: center;
+    /* Centra horizontalmente los elementos */
+    gap: 1rem;
+    /* Espacio entre cada elemento */
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #ffdd57;
+  }
+
+/* Estilos Generales */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+form {
+    margin: 30px 0;
+}
+
+fieldset {
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+legend {
+    font-weight: bold;
+    color: #000000;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 120px;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #030e6e;
+}
+
+/* Sección de Contacto */
+.contact {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    background-color: #000000;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+}
+
+.contact a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    section {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    form {
+        margin: 20px 0;
+    }
+
+    .contact ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Dispositivos móviles grandes (Tablets en vertical, móviles grandes) */
+@media (max-width: 768px) {
+    section {
+        max-width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    .contact ul {
+        gap: 15px;
+    }
+
+    .contact li {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+
+/* Dispositivos móviles pequeños (teléfonos) */
+@media (max-width: 480px) {
+    header .titulo {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    .contact ul {
+        flex-direction: column;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 12px;
+    }
+}
+
+
   </style>
 </head>
 
@@ -64,21 +417,21 @@
       <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
       <h1 class="titulo">
           Daniel Hernando Hernandez Alarcon
-          <span>Front End Developer | Cybersecurity | Software Engineering Student</span>
+          <span>Software Developer | Software Engineering Student</span>
       </h1>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="contacto.html">Contact</a>
-    <a href="https://github.com/Danny894" target="_blank">github</a>
-
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#contacto.html">Contact</a></li>
+      <li><a href="https://github.com/Danny894" target="_blank">GitHub</a></li>
+    </ul>
   </nav>
 
   <section>
     <h2>Contact me</h2>
-    <form action="https://formsubmit.co/danny894@outlook.com" method="POST" />
-    <form>
+    <form action="https://formsubmit.co/danny894@outlook.com" method="POST">
       <fieldset>
         <legend>Contact me by filling out the fields</legend>
 
@@ -87,26 +440,26 @@
           <input type="text" name="name" placeholder="Name" />
         </div>
 
-        <diav>
+        <div>
           <label>Email</label>
           <input type="email" name="email" placeholder="Email"/>
-        </diav>
+        </div>
 
-        <diav>
+        <div>
           <label>Phone</label>
           <input type="number" name="number" placeholder="123456789"/>
-        </diav>
+        </div>
 
         <div>
           <label>Message</label>
-          <textarea name="comments "></textarea>
+          <textarea name="comments"></textarea>
         </div>
 
         <div>
           <input type="submit" value="Send"/>
         </div>
 
-        <input type="hidden" name="_next" value="https://danny894.github.io/contacto.html">
+        <input type="hidden" name="_next" value="https://danny894.github.io/">
         <input type="hidden" name="_captcha" value="false">
       </fieldset>
     </form>
@@ -136,9 +489,7 @@
   </section>
 
   <footer>
-    <p>
-      All rights reserved. Daniel Hernandez
-    </p>
+    <h6>© 2025 Daniel Hernandez. All rights reserved.</h6>
   </footer>
 </body>
 
