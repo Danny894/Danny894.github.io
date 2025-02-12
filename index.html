@@ -1,179 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniel Hernandez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" href="foto_sin_fondo-removebg-preview.png" type="image/png">
-  <link rel="preload" href="index.css" as="style" />
-  <link href="index.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #333;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Hernandez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="foto_sin_fondo-removebg-preview.png"
+      type="image/png">
+    <link rel="preload" href="index.css" as="style" />
+    <script src="scripts/index.js" defer></script>
+    <style>
+  
+      body {
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(135deg, #c46e05, #b40090);
+      }
+  
+/* Evitar desbordamiento horizontal */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden; /* Impide scroll lateral */
+    width: 100%;
+}
+
+header {
+    background: linear-gradient(135deg, #000000, #000000);
+    color: white;
+    padding: 2rem 0;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden; /* Asegura que header no genere scroll lateral */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 100%; /* Asegura que el contenido se ajuste a la pantalla */
+    flex-wrap: wrap;
+}
+
+header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-right: 25px;
+
+    /* Animación de entrada */
+    animation: fadeIn 1s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInZoom 3s ease-out forwards, floatAnimation 4s infinite ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeInZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efecto flotante */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header img {
+        margin-bottom: 1rem;
+        animation: fadeInZoom 1s ease-out forwards, floatAnimation 5s infinite ease-in-out;
+    }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    text-align: left;
+    max-width: 100%; /* Evita que el texto exceda el ancho disponible */
+}
+
+header h1 span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 2rem 1rem;
     }
 
-    /* Menú de selección de idioma */
-    .language-selector {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: linear-gradient(135deg, rgb(240, 240, 0), #d90089);
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+    .header-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .language-selector a {
-      text-decoration: none;
-      color: #ffffff;
-      padding: 5px;
+    header img {
+        margin-bottom: 1rem;
     }
 
-    /* Estilo adicional */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Roboto', sans-serif;
+    header h1 {
+        font-size: 1.8rem;
     }
 
-    p,
-    ul,
-    li {
-      font-family: 'Roboto', sans-serif;
+    header h1 span {
+        font-size: 0.9rem;
     }
-  </style>
-</head>
+}
 
-<body>
 
-  <header>
-    <!-- Selector de idioma en la parte superior derecha -->
-    <div class="language-selector">
-      <a href="index.html">English</a> | <a href="indexES.html">Español</a>
-    </div>
-    <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
-    <h1 class="titulo">
-      Daniel Hernando Hernandez Alarcon
-      <span>Front End Developer | Cybersecurity | Software Engineering Student</span>
-    </h1>
-  </header>
+  
+      .language-selector {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+  
+      .language-selector a {
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        transition: color 0.3s ease;
+      }
+  
+      .language-selector a:hover {
+        color: #ffdd57;
+      }
+  
+      nav {
+    background: #000000;
+    padding: 0.5rem 0;
+    text-align: center;
+}
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="contacto.html">Contact</a></li>
-      <li><a href="https://github.com/Danny894" target="_blank">GitHub</a></li>
-    </ul>
-  </nav>
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* Organiza los elementos en filas */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 1rem; /* Espacio entre cada elemento */
+}
 
-  <main>
-    <section id="sobre-mi">
-      <h2>About me</h2>
-      <p>
-        Front-End Developer with experience in designing and developing web applications using modern technologies such
-        as React, JavaScript, TypeScript, CSS, HTML, Node.js, PHP, and SQL. Passionate about creating intuitive,
-        streamlined, and functional user interfaces, with a focus on writing clean code and efficient solutions.
-        Additionally, I have fundamental knowledge in cybersecurity, which allows me to implement protective measures in
-        my software projects.
-      </p>
-    </section>
+nav ul li {
+    margin: 0;
+}
 
-    <section id="habilidades">
-      <h2>Technical Skills</h2>
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffdd57;
+}
+
+  
+      main {
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+  
+      section {
+        margin-bottom: 1.5rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+  
+      section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+  
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+  
+      p,
+      ul {
+        font-size: 1rem;
+        color: #000000;
+      }
+  
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+  
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+  
+      a {
+        color: #2575fc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+  
+      a:hover {
+        color: #6a11cb;
+      }
+  
+      footer {
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+      footer p {
+        margin: 0;
+      }
+  
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+  
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      section {
+        animation: fadeIn 0.6s ease-out;
+      }
+  
+      /* Responsive Design */
+      @media (min-width: 600px) {
+        header img {
+          width: 150px;
+          height: 150px;
+        }
+  
+        header h1 {
+          font-size: 2.5rem;
+        }
+  
+        header h1 span {
+          font-size: 1.2rem;
+        }
+  
+        nav ul {
+          flex-direction: row;
+          justify-content: center;
+        }
+  
+        nav ul li {
+          margin: 0 15px;
+        }
+  
+        main {
+          padding: 2rem;
+        }
+  
+        section {
+          padding: 1.5rem;
+        }
+      }
+  
+      @media (min-width: 768px) {
+        header {
+          padding: 2rem 0;
+        }
+  
+        header h1 {
+          font-size: 3rem;
+        }
+  
+        header h1 span {
+          font-size: 1.5rem;
+        }
+  
+        nav ul li a {
+          font-size: 1.1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+        }
+  
+        p,
+        ul {
+          font-size: 1.1rem;
+        }
+      }
+  
+      @media (min-width: 1024px) {
+        header h1 {
+          font-size: 3.5rem;
+        }
+  
+        header h1 span {
+          font-size: 1.75rem;
+        }
+  
+        nav ul li a {
+          font-size: 1.2rem;
+        }
+  
+        h2 {
+          font-size: 2.25rem;
+        }
+  
+        p,
+        ul {
+          font-size: 1.2rem;
+        }
+      }
+      .about {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.about-content p {
+    flex: 1;
+    margin-right: 15px;
+    text-align: justify; /* Justifica el texto del párrafo */
+}
+
+/* Imagen lateral con tamaño adaptable */
+.about-content img {
+    max-width: 200px; /* Tamaño máximo de la imagen */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Apila el contenido verticalmente */
+        align-items: flex-start;
+    }
+
+    .about-content p {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .about-content img {
+        max-width: 150px;
+        align-self: center; /* Centra la imagen en la columna */
+    }
+}
+
+
+
+.about-content img.side-image {
+    max-width: 180px; /* Ancho máximo de la imagen */
+    max-height: 180px; /* Altura máxima de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta el contenido dentro del contenedor */
+    margin-left: 15px; /* Espacio entre la imagen y el texto */
+}
+.technologies .icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.technologies img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+#proyectos {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#proyectos h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#proyectos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#proyectos li {
+    display: flex;
+    flex-wrap: wrap; /* Makes it responsive */
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#proyectos li a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#proyectos li a:hover {
+    text-decoration: underline;
+}
+
+.project-description {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+}
+
+.project-iframe {
+    flex: 1;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.project-description2 {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+}
+
+.project-iframe2 {
+    flex: 1;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-iframe2 iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="language-selector">
+        <a href="index.html">English</a> | <a href="indexES.html">Español</a>
+      </div>
+      <img src="foto_sin_fondo.png" alt="Foto de Daniel Hernandez" />
+      <h1 class="titulo">
+        Daniel Hernando Hernandez Alarcon
+        <span>Software Developer | Software Engineering Student</span>
+      </h1>
+    </header>
+
+    <nav>
       <ul>
-        <li><strong>Programming languages:</strong> JavaScript, TypeScript, HTML, CSS, C</li>
-        <li><strong>Frameworks and libraries:</strong> React, Node.js, Angular</li>
-        <li><strong>Cybersecurity:</strong> Knowledge of web application protection, basic cryptography,
-          handling common vulnerabilities (OWASP), security analysis and penetration testing.</li>
-        <li><strong>Version control:</strong> Git, GitHub</li>
-        <li><strong>Databases:</strong> Basic knowledge of SQL</li>
-        <li><strong>Methodologies:</strong> Agile Development (Scrum, Kanban)</li>
-        <li><strong>Markup and styling languages:</strong> HTML5, CSS3</li>
-        <li><strong>Other tools:</strong> Visual Studio Code, NPM, Webpack</li>
+        <li><a href="#sobre-mi">Home</a></li>
+        <li><a href="contacto.html">Contact</a></li>
+        <li><a href="https://github.com/Danny894"
+            target="_blank">GitHub</a></li>
       </ul>
-    </section>
+    </nav>
 
-    <section id="educacion">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Software engineering:</strong> Corporacion universitaria iberoamericana (2022 –
-          Present)</li>
-        <li><strong>El Riesgo Crediticio y su Administración:</strong> SENA (2018 - 2020)</li>
-      </ul>
-    </section>
+    <main>
+      <section id="about">
+        <h2>About Me <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="40px" alt="About"></h2>
+        <div class="about-content">
+          <p>
+            Software Developer with Front-End specialization and experience in web development. I have solid knowledge in HTML, CSS and JavaScript, creating dynamic and responsive interfaces with a focus on usability and performance.
+            On the Back-End, my forte is Python, where I develop APIs and services using frameworks such as Flask or FastAPI and SQL databases. I have experience in system integration and API consumption, which allows me to efficiently connect the Front-End with server logic.   
+            I am always looking to improve my skills and learn new technologies to develop optimal and scalable solutions. 🚀
+          </p>        
+          <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Right_Side.gif?raw=true" 
+               alt="About Image" class="side-image">
+      </div>
+      
+      </section>
 
-    <section id="proyectos">
-      <h2>Personal projects</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/Danny894/danistore.github.io" target="_blank">Dani Store</a> - Dani Store is a web
-          store dedicated to selling custom sweaters with logos of different programming languages. This store is
-          designed using HTML and CSS, offering a simple and visually appealing experience for programming enthusiasts
-          who want to showcase their favorite language everywhere.
-        </li>
+      <section id="habilidades">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Programming languages:</strong> JavaScript, Python</li>
+          <li><strong>Frameworks and libraries:</strong> React, streamlit, pandas</li>
+          <li><strong>Version control:</strong> Git, GitHub</li>
+          <li><strong>Databases:</strong> Basic knowledge of SQL</li>
+          <li><strong>Methodologies:</strong> Agile Development (Scrum,
+            Kanban)</li>
+          <li><strong>Markup and styling languages:</strong> HTML5, CSS3.</li>
+          <li><strong>Other tools:</strong> Visual Studio Code, IntelliJ IDEA, Pycharm.</li>
 
+        </ul>
+        <div class="technologies">
+          <div class="icons">            
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React"> 
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git">
+            <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="SQL Server">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5"> 
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux">
+          </div>
+      </section>
 
-      </ul>
-      <ul>
-        <li>
-          <a href="https://voluble-nougat-aa8892.netlify.app/" target="_blank">Carrito de compras</a> - This project is
-          an interactive website for viewing and purchasing online courses. The design focuses on the presentation of
-          the courses, allowing the user to add items to a shopping cart, review its contents, and empty it if
-          necessary. The page includes an attractive and responsive design with different sections, such as the header,
-          a feature bar, a list of courses, and a footer with informative links.
-        </li>
-      </ul>
+      <section id="educacion">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Software engineering:</strong> Corporacion universitaria
+            iberoamericana (2022 –
+            Present)</li>
+          <li><strong>El Riesgo Crediticio y su Administración:</strong> SENA
+            (2018 - 2020)</li>
+        </ul>
+      </section>
 
-      <ul>
-        <li>
-          <a href="https://moonlit-dragon-9c497e.netlify.app/" target="_blank">Buscador de autos</a> - This project is a
-          simple web application that allows users to search for cars based on different criteria such as make, year,
-          price, number of doors, transmission and color.
-        </li>
-      </ul>
+      <section id="proyectos">
+        <h2>Personal Projects</h2>
+        <ul>
+          <li>
+            <div class="project-description">
+              <a href="https://voluble-nougat-aa8892.netlify.app/" target="_blank">
+                Carrito de compras
+              </a> 
+              - This project is an interactive website for viewing and purchasing online courses. 
+              The design focuses on the presentation of the courses, allowing the user to add items to a shopping cart, 
+              review its contents, and empty it if necessary. The page includes an attractive and responsive design with different sections, 
+              such as the header, a feature bar, a list of courses, and a footer with informative links.
+            </div>
+            <div class="project-iframe">
+              <iframe 
+                src="https://voluble-nougat-aa8892.netlify.app/" 
+                title="Vista previa del proyecto Carrito de Compras">
+              </iframe>
+            </div>
+          </li>
+        </ul>
+            
+          <li>
+            <div class="project-description2">
+            <a href="https://visuapp-6oqdnysxugorteftsxmkty.streamlit.app/"
+              target="_blank">VisuHub</a> - VisuHub is an interactive web application built with Streamlit. It allows users to upload CSV files, visualize tabular data, and generate dynamic charts using Plotly. 
+              The app leverages Pandas for data analysis and offers simple navigation through a sidebar menu. Ideal for quick data exploration and interactive visualization.
+            </div>
+            <div class="project-iframe2">
+              <iframe 
+                src="https://visuapp-6oqdnysxugorteftsxmkty.streamlit.app/" 
+                title="Vista previa del proyecto VisuHub">
+              </iframe>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-      <ul>
-        <li>
-          <a href="https://678a6d196d4e7c443e03b87e--earnest-ganache-5c7167.netlify.app/" target="_blank">Administrador
-            de Pacientes de Veterinaria</a> - Veterinary Patient Manager is a simple web application designed to manage
-          veterinary patient appointments. It allows users to record basic data about pets, their owners, and
-          appointment information such as date, time, and symptoms.
-        </li>
-      </ul>
+      <section id="idiomas">
+        <h2>Languages</h2>
+        <ul>
+          <li><strong>Spanish:</strong> Native</li>
+          <li><strong>English:</strong> Intermediate (B1)</li>
+        </ul>
+      </section>
 
-    </section>
+      <section id="certificaciones">
+        <h2>Certifications</h2>
+        <ul>
+          <li><a
+              href="https://www.coursera.org/account/accomplishments/specialization/certificate/KGRDDWEDY6XG"
+              target="_blank">Google Cybersecurity</a> - Coursera</li>
+          <li><a
+              href="https://platzi.com/p/danny894/curso/2467-frontend-developer/diploma/detalle/"
+              target="_blank">Front-End Developer</a> - Platzi</li>    
+          <li><a
+              href="https://platzi.com/p/danny894/curso/10002-python/diploma/detalle/"
+              target="_blank">Python</a> - Platzi</li>
+        </ul>
+      </section>
 
-    <section id="idiomas">
-      <h2>Languages</h2>
-      <ul>
-        <li><strong>Spanish:</strong> Native</li>
-        <li><strong>English:</strong> Intermediate (B1)</li>
-      </ul>
-    </section>
+    </main>
 
-    <section id="certificaciones">
-      <h2>Certifications</h2>
-      <ul>
-        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/KGRDDWEDY6XG"
-            target="_blank">Google Cybersecurity</a> - Coursera</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>All rights reserved. Daniel Hernandez</p>
-  </footer>
-</body>
+    <footer>
+      <h6>© 2025 Daniel Hernandez. All rights reserved.</h6>
+    </footer>
+  </body>
 
 </html>
